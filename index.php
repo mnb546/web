@@ -15,9 +15,9 @@ $main_tmp = new template('main');
 //valmistame paarid malli_element => väärtus
 $main_tmp->set('user', 'Kasutajanimi');
 $main_tmp->set('title', 'Avaleht');
-$main_tmp->set('lang_bar', 'keeleriba');
-$main_tmp->set('menu', 'lehe_peamenüü');
-$main_tmp->set('content', 'lehe sisu');
+$main_tmp->set('lang_bar', 'Keeleriba');
+$main_tmp->set('menu', 'Lehe peamenüü');
+$main_tmp->set('content', 'Lehe sisu');
 $main_tmp->set('site_title', 'Veebiarendus');
 // Kontrollime antud objekti sisu
 /*echo '<pre>';
