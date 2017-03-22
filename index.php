@@ -11,7 +11,7 @@ require_once 'conf.php';
 echo '<h1>Veebipõhine esileht</h1> <h3>Rainer ISP14</h3>';
 
 // Valmistame peatemplate objekti
-$main_tmp = new template(TMP_DIR.'main.html');
+$main_tmp = new template('main.html');
 // Kontrollime antud objekti sisu
 echo '<pre>';
 print_r($main_tmp);
