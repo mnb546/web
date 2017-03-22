@@ -18,8 +18,10 @@ $main_tmp->set('title', 'Avaleht');
 $main_tmp->set('lang_bar', 'keeleriba');
 $main_tmp->set('menu', 'lehe_peamenüü');
 $main_tmp->set('content', 'lehe sisu');
+$main_tmp->set('site_title', 'Veebiarendus');
 // Kontrollime antud objekti sisu
-echo '<pre>';
+/*echo '<pre>';
 print_r($main_tmp);
-echo '</pre>';
+echo '</pre>';*/
+echo $main_tmp->parse();
 ?>

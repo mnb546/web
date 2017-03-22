@@ -71,8 +71,10 @@ class template
         // vaatame malli
         foreach ($this->vars as $name=>$val) {
             $str = str_replace('{'.$name.'}', $val, $str);
-            echo $str;
         }
+        
+        //tagastan täos täidetud malli sisu
+        return $str;
     }
 }
 
