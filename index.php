@@ -24,4 +24,6 @@ $main_tmp->set('site_title', 'Veebiarendus');
 print_r($main_tmp);
 echo '</pre>';*/
 echo $main_tmp->parse();
+// kutsume menüü tööletestimiseks
+require_once 'menu.php';
 ?>
