@@ -34,6 +34,14 @@ class template
             // loeme failist malli sisu
             $this->readFile($f);
         }
+
+        // Lisame TMP_DIR kasutusele
+        $f = TMP_DIR.$this->file;
+        if(file_exists($f) and is_file($f) and is_readable($f)){
+            // loeme failist malli sisu
+            $this->readFile($f);
+        }
+
         // Kui sisu ei ole võimalik lugeda
         if($this->content === false) {
             echo 'Ei suutnud lugeda faili '.$this->file.'<br />';
