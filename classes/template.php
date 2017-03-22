@@ -64,6 +64,16 @@ class template
     function set($name, $val) {
         $this->vars[$name] = $val;
     }
+
+    // html malli täitmine reaalse sisuga
+    function parse() {
+        $str = $this->content; //lokaalne asendus
+        // vaatame malli
+        foreach ($this->vars as $name=>$val) {
+            $str = str_replace('{'.$name.'}', $val, $str);
+            echo $str;
+        }
+    }
 }
 
 ?>
