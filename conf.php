@@ -16,8 +16,7 @@ require_once CLASSES_DIR.'http.php';
 
 // loome vajalikud objektid projekti tööks
 $http = new http();
-$http->init();
-$http->initCont();
+
 // test väljund
 //echo '<pre>';
 //print_r($http);
