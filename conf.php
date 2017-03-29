@@ -12,5 +12,13 @@ define('TMP_DIR', 'tmp/'); // tmp kausta nime konstant
 
 // võtame kasutusele vajalikud failid
 require_once CLASSES_DIR.'template.php';
-require_once CLASSES_DIR.'http.php':
+require_once CLASSES_DIR.'http.php';
+
+// loome vajalikud objektid projekti tööks
+$http = new http();
+$http->init();
+// test väljund
+echo '<pre>';
+print_r($http);
+echo '</pre>';
 ?>
