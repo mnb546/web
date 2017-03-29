@@ -80,6 +80,7 @@ class template
         }
         else {
             $this->vars[$name] = $this->vars[$name].$val;
+            
         }
     }
 

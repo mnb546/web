@@ -20,7 +20,7 @@ $main_tmp->set('menu', 'Lehe peamenüü');
 // kutsume menüü tööletestimiseks
 require_once 'menu.php';
 $main_tmp->set('content', 'Lehe sisu');
-$main_tmp->set('site_title', 'Veebiarendus');
+$main_tmp->set('site_title', 'Veebiprogrammeerimise kursus');
 // Kontrollime antud objekti sisu
 /*echo '<pre>';
 print_r($main_tmp);
