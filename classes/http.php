@@ -12,6 +12,12 @@ class http
     var $vars = array(); // http päringute andmed
     var $server = array(); // serveri (masina) andmed
 
+    // klassi konstruktor
+    function __construct() {
+        $this->init();
+        $this->initCont();
+    }
+
     // klassi meetodid
     // paneme algandmed paika - initsialiseerimine neid
     function init() {
