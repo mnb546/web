@@ -25,7 +25,9 @@ $http = new linkobject();
 
 // testime linkobjekti tööd
 echo $http->baseUrl;
-
+echo '<br>';
+$link = $http->getLink(array('kasutaja'=>'admin', 'pass'=>'qwerty'));
+echo $link;
 // test väljund
 //echo '<pre>';
 //print_r($http);
