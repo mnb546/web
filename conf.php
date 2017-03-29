@@ -9,6 +9,10 @@
 // Vajalike konstantide defineerimine
 define('CLASSES_DIR', 'classes/'); // classes kausta nime konstant
 define('TMP_DIR', 'tmp/'); // tmp kausta nime konstant
+define('LIB_DIR', 'lib/'); // lib kataloogi nime konstant
+
+// võtame kasutusele vajalikud abifailid
+require_once LIB_DIR.'utils.php';
 
 // võtame kasutusele vajalikud failid
 require_once CLASSES_DIR.'template.php';
