@@ -72,6 +72,17 @@ class template
         $this->vars[$name] = $val;
     }
 
+    // lisame väärtused olemasolevatele elementidele
+    function add($name, $val) {
+        // kui antud nimega elementi ei eksisteeri
+        if(!isset($this->vars[$name])) {
+            $this->set($name, $val);
+        }
+        else {
+            $this->vars[$name] = $this->vars[$menu].$val;
+        }
+    }
+
     // html malli täitmine reaalse sisuga
     function parse() {
         $str = $this->content; //lokaalne asendus
