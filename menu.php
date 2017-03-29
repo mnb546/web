@@ -11,6 +11,8 @@ $item = new template('menu.item');
 // lisame sisu
 $item->set('name', 'esimene');
 $menu->set('items', $item->parse());
+$item->set('name', 'teine');
+$menu->add('items', $item->parse());
 //kontrollime objekti olemasolu sisu
 echo '<pre>';
 print_r($menu);

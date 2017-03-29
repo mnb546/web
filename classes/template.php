@@ -79,7 +79,7 @@ class template
             $this->set($name, $val);
         }
         else {
-            $this->vars[$name] = $this->vars[$menu].$val;
+            $this->vars[$name] = $this->vars[$name].$val;
         }
     }
 
