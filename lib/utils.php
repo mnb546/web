@@ -6,7 +6,7 @@
  * Time: 14:47
  */
 function fixUrl($val){
-    return urlecode ($val);
+    return urlencode($val);
 }
 
 ?>
