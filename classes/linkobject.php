@@ -22,4 +22,13 @@ class linkobject extends http
         // lingi loomine
         $this->baseUrl = $this->protocol.HTTP_HOST.SCRIPT_NAME;
     }
+    
+    // andmete paari koostamine kujul
+    // nimi=väärtus&nimi1=väärtus1 jne
+    function addToLink($link, $nimi, $val) {
+        if ($link != '') {
+            $link = $link.$this->$delim; 
+        }
+        $link = $link.$
+    }
 }

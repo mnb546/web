@@ -22,6 +22,7 @@ $http = new linkobject();
 // test väljund
 //echo '<pre>';
 //print_r($http);
-//echo '</pre>';
-echo REMOTE_ADDR;
+
+// testime linkobjekti tööd
+echo $http->baseUrl;
 ?>
