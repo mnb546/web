@@ -19,8 +19,8 @@ $main_tmp->set('lang_bar', 'Keeleriba');
 $main_tmp->set('menu', 'Lehe peamenüü');
 // kutsume menüü tööletestimiseks
 require_once 'menu.php';
-// töstsime vaikimisi väljundi default tegevuse sisse
 require_once 'act.php';
+// töstsime vaikimisi väljundi default tegevuse sisse
 $main_tmp->set('site_title', 'Veebiprogrammeerimise kursus');
 // Kontrollime antud objekti sisu
 /*echo '<pre>';
