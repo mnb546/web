@@ -6,3 +6,5 @@
  * Time: 8:46
  */
 $main_tmp->set('content', 'Teine leht');
+
+?>

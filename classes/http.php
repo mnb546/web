@@ -34,5 +34,16 @@ class http
             }
         }
     }
+
+    //saame kätte veebis olevad andmed - nagu $_POST või $_GET - emulatsioon
+    // tegelikult need andmed on lingi kaudu saadud
+    function get($name) {
+        // tagastame selle väärtuse
+        if($this->vars[$name]) {
+            return $this->vars[$name];
+        }
+        // või tagastame tühja väärtuse
+        return false;
+    }
 }
 ?>
