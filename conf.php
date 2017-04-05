@@ -10,6 +10,7 @@
 define('CLASSES_DIR', 'classes/'); // classes kausta nime konstant
 define('TMP_DIR', 'tmp/'); // tmp kausta nime konstant
 define('LIB_DIR', 'lib/'); // lib kataloogi nime konstant
+define('ACTS_DIR', 'acts/'); // acts kataloogi nime konstant
 
 // võtame kasutusele vajalikud abifailid
 require_once LIB_DIR.'utils.php';
@@ -23,11 +24,12 @@ require_once CLASSES_DIR.'linkobject.php';
 
 $http = new linkobject();
 
+
 // testime linkobjekti tööd
-echo $http->baseUrl;
-echo '<br>';
-$link = $http->getLink(array('kasutaja'=>'admin', 'pass'=>'qwerty'));
-echo $link;
+//echo $http->baseUrl;
+//echo '<br>';
+//$link = $http->getLink(array('kasutaja'=>'admin', 'pass'=>'qwerty'));
+//echo $link;
 // test väljund
 //echo '<pre>';
 //print_r($http);
