@@ -12,6 +12,8 @@ define('TMP_DIR', 'tmp/'); // tmp kausta nime konstant
 define('LIB_DIR', 'lib/'); // lib kataloogi nime konstant
 define('ACTS_DIR', 'acts/'); // acts kataloogi nime konstant
 
+define('DEFAULT_ACT', 'default'); // vaikimis tegevuse faili konstant
+
 // võtame kasutusele vajalikud abifailid
 require_once LIB_DIR.'utils.php';
 
