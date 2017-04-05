@@ -8,12 +8,13 @@
 $act = $http->get('act'); // küsime hetkel valitud tegevuse
 
 // koostame otsitava faili nime failisüsteemi jaoks
-$fn = ACTS_DIR..str_replace('.', '/', $act).'.php';
+$fn = ACTS_DIR.str_replace('.', '/', $act).'.php';
 // kui selline fail olemas ja lugemiseks lubautd
 if(file_exists($fn) and is_file($fn) and is_readable($fn)) {
     // siis loeme sisu
     require_once $fn;
 }
 else {
-    echo 'Sobivat faili pole';
+    $fn = ACTS_DIR.'default'.'.php';
+    require_once $fn;
 }
