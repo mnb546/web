@@ -10,27 +10,25 @@ $menu = new template('menu.menu');
 $item = new template('menu.item');
 // lisame sisu
 // menüü sql lause
-$sql = 'SELECT content_id, title FROM content WHERE parent_id="0";'
+$sql = 'SELECT content_id, title FROM content WHERE '.'parent_id='.fixDB(0).' AND show_in_menu='.fixDb(1);
 
+// saame päringu tulemuse
+$res = $db->getArray($sql);
+// tulemuse sisu kontrollimine
 
-//nimetame menüüs väljastav element
-$item->set('name', 'esimene');
-//loome antud menüü elemendil lingi
-$link = $http->getLink(array('act'=>'first'));
-// lisame antud link menüüsse
-$item->set('link', $link);
-//lisame valmis link menüü objekti sisse
-$menu->set('items', $item->parse());
+if ($res != false) {
+    foreach ($res as $page) {
+        // nimetame menüüs väljastatava elemendi
+        $item->set('name', $page['title']);
+        //loome antud menüü elemendil lingi
+        $link = $http->getLink(array('page_id'=>$page['content_id']));
+        // lisame antud link menüüsse
+        $item->set('link', $link);
+        // lisame valmis lingi menüü objekti sisse
+        $menu->add('items', $item->parse());
+    }
+}
 
-$item->set('name', 'teine');
-$link = $http->getLink(array('act'=>'second'));
-$item->set('link', $link);
-$menu->add('items', $item->parse());
-//kontrollime objekti olemasolu sisu
-//echo '<pre>';
-//print_r($menu);
-//print_r($item);
-//echo '</pre>';
 // kui soovime pidevat asendamist, siis set funktsioon add asemel
 $main_tmp->add('menu', $menu->parse());
 ?>
