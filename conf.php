@@ -18,6 +18,8 @@ define('DEFAULT_ACT', 'default'); // vaikimis tegevuse faili nime konstant
 require_once LIB_DIR.'utils.php';
 require_once 'db_conf.php'; // loeme andmebaasi konfi sisse
 
+define('DEFAULT_LANG', 'et'); // default keel
+
 // võtame kasutusele vajalikud failid
 require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
