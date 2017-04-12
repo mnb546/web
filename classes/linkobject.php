@@ -14,6 +14,7 @@ class linkobject extends http
     var $delim = '&amp;';
     var $eq = '=';
     var $protocol = 'http://';
+    var $aie = array('lang_id','sid'=>'sid'); // keel
 
     // klassi meetodid
     // klassi konstruktor
@@ -33,11 +34,27 @@ class linkobject extends http
     }
 
     // saame täislink valmis
-    function getLink($add = array()){
+    function getLink($add = array(), $aie = array(), $not = array()){
         $link = '';
         foreach($add as $name=>$val){
             $this->addToLink($link, $name, $val);
         }
+        // juhul kui antud element juba meie lehel ette defineeritud
+        foreach ($aie as $name) {
+            $val = $this->get($name);
+            if($val != false) {
+                $this->addToLink($link, $name, $val);
+            }
+        }
+        // juhul, kui antud objektis see väärtus juba määratud - nt keele id
+        foreach ($this->aie as $name) {
+            $val = $this->get($name);
+            // kontrollida, kas olemasoelv asi juba lingis lisatud või mitte
+            if($val != false and !in_array($name, $not)) {
+                $this->addToLink($link, $name, $val);
+            }
+        }
+
         if($link != '') {
             $link = $this->baseUrl.'?'.$link;
         }
