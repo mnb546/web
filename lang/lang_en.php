@@ -8,9 +8,9 @@
 
 // /lang/lang_en.php
 $_trans = array(
-    'Esimene' => 'First',
-    'Teine' => 'Second',
-    'Minu lehe pealkiri' => 'My page heading',
+    'Esimene leht' => 'First page',
+    'Teine leht' => 'Second page',
+    'See on lehe avaleht' => 'This is the front page',
     'Kasutajanimi' => 'Username',
     'Avaleht' => 'Front Page'
-    )
+    );

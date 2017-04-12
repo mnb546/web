@@ -19,13 +19,13 @@ $res = $db->getArray($sql);
 if ($res != false) {
     foreach ($res as $page) {
         // nimetame menüüs väljastatava elemendi
-        $item->set('name', $page['title']);
+        $item->set('name', tr($page['title']));
         //loome antud menüü elemendil lingi
         $link = $http->getLink(array('page_id'=>$page['content_id']));
         // lisame antud link menüüsse
-        $item->set('link', $link);
+        $item->set('link', tr($link));
         // lisame valmis lingi menüü objekti sisse
-        $menu->add('items', $item->parse());
+        $menu->add('items', ($item->parse());
     }
 }
 
