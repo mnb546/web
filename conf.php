@@ -29,7 +29,7 @@ require_once CLASSES_DIR.'mysql.php';
 $http = new linkobject();
 $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-$res = $db->query('SELECT NOW()');
+$res = $db->getArray('SELECT NOW()');
 echo '<pre>';
 print_r($res);
 echo '</pre>';

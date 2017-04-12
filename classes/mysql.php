@@ -45,7 +45,7 @@ class mysql {
     }
 
     // andmetega päringu testimine
-    function getArray() {
+    function getArray($sql) {
         $res = $this->query($sql);
         $data = array();
         while($row = mysqli_fetch_assoc($res)) {
