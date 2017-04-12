@@ -11,6 +11,7 @@ define('CLASSES_DIR', 'classes/'); // classes kausta nime konstant
 define('TMP_DIR', 'tmp/'); // tmp kausta nime konstant
 define('LIB_DIR', 'lib/'); // lib kataloogi nime konstant
 define('ACTS_DIR', 'acts/'); // acts kataloogi nime konstant
+define('LANG_DIR', 'lang/'); // keelte kataloogi nime konstant
 
 define('DEFAULT_ACT', 'default'); // vaikimis tegevuse faili nime konstant
 
