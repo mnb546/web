@@ -25,7 +25,7 @@ if ($res != false) {
         // lisame antud link menüüsse
         $item->set('link', tr($link));
         // lisame valmis lingi menüü objekti sisse
-        $menu->add('items', ($item->parse());
+        $menu->add('items', ($item->parse()));
     }
 }
 

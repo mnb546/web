@@ -8,6 +8,7 @@
 
 // /lang/lang_en.php
 $_trans = array(
+    'Veebipõhine esileht' => 'Web-based front page',
     'Esimene leht' => 'First page',
     'Teine leht' => 'Second page',
     'See on lehe avaleht' => 'This is the front page',
