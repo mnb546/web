@@ -49,6 +49,7 @@ if(!isset($siteLangs[$lang_id])) {
     $http->set('lang_id', $lang_id); // fix kasutatud lang_id
 }
 define('LANG_ID', $lang_id); //
+require_once LIB_DIR.'trans.php'; 
 
 // testime linkobjekti tööd
 //echo $http->baseUrl;
