@@ -78,7 +78,36 @@ class session
                 'sid='.fixDb($this->sid);
             // saadame päringu andmebaasi ja võtame andmed
             $res = $this->db->getArray($sql);
+            // juhul kui andmebaasist andmeid ei tule
+            if($res == false) {
+                // kui anonüümne on lubatud, siis loome uue sessiooni
+                if($this->anonymous) {
+                    $this->createSession();
+                }
+                else {
+                    // tuleb maha kustutada kõik antud sessiooniga tulevad andmed veebist
+                    $this->sid = false;
+                    $this->http->del('sid');
+                }
+            }
+            else {
+                // kui andmebaaist on võimalik sessiooni kohta andmeid saada
+                // kõigepealt sessiooni andmed
+                $vars = unserialize($res[0]['svars']);
+                if(!is_array($vars)) {
+                    $vars = array();
+                }
+                $this->vars = $vars;
+                // nüüd kasutaja andmed
+                $user_data = unserialize($res[0]['user_data']);
+                $this->user_data = $user_data;
+            }
         }
-    }
+        else {
+            // kui $this->sid === false
+            // hetkel sessiooni pole
+            echo 'Sessiooni hetkel pole<br>';
+        }
+    } // checkSession end
 
 }
