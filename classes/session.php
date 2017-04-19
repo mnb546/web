@@ -21,6 +21,9 @@ class session
     function __construct(&$http, &$db) {
         $this->http = &$http;
         $this->db = &$db;
+        // võtame sessiooni id andmed
+        $this->createSession();
+        $this->sid = $http->get('sid');
     }
 
     // sessiooni loomine
