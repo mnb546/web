@@ -15,7 +15,7 @@ class session
     var $http = false; // objekt veebiandmete kasutamiseks
     var $db = false; // objekt, mis läheb andmebaasi kasutamiseks
     var $anonymous = true; // anonüümne kasutaja on lubatud
-    var $timeout = 1800; // 30 min = 1800s
+    var $timeout = 900; // 15 min = 900s
 
     // klassi meetodid
     // konstruktor
