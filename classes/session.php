@@ -109,5 +109,13 @@ class session
             echo 'Sessiooni hetkel pole<br>';
         }
     } // checkSession end
+    function flush() {
+        if($this->sid !== false) {
+            $sql = 'UPDATE session SET changed=NOW(), '.
+                'svars='.fixDb(serialize($this->vars)).
+                ' WHERE sid='.fixDb($this->sid);
+            $this->db->query($sql);
+        }
+    }
 
 }
