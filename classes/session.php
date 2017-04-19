@@ -15,6 +15,7 @@ class session
     var $http = false; // objekt veebiandmete kasutamiseks
     var $db = false; // objekt, mis läheb andmebaasi kasutamiseks
     var $anonymous = true; // anonüümne kasutaja on lubatud
+    var $timeout = 1800; // 30 min = 1800s
 
     // klassi meetodid
     // konstruktor
@@ -53,6 +54,13 @@ class session
         $this->sid = $sid;
         // paneme antud väärtuse ka veebi - lehtede vahel kasutamiseks
         $this->http->set('sid', $sid);
+    }
+
+    function clearSessions() {
+        $sql = 'DELETE FROM session WHERE '.
+            time().' - UNIX_TIMESTAMP(changed) > '.
+            $this->timeout;
+        $this->db->query($sql);
     }
 
 }
