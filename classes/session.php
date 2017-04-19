@@ -64,4 +64,21 @@ class session
         $this->db->query($sql);
     }
 
+    // sessiooni kontroll
+    function checkSession() {
+        $this->clearSessions();
+        // kui sid on puudu ja anonüümne on lubatud, tekitame alustamiseks anonüümse sessiooni
+        if($this->sid === false and $this->anonymous) {
+            $this->createSession();
+        }
+        // kui sid on olemas
+        if($this->sid !== false) {
+            //võtame andmed sessiooni tabelist, mis on antud id-ga seotud
+            $sql = 'SELECT * FROM session WHERE '.
+                'sid='.fixDb($this->sid);
+            // saadame päringu andmebaasi ja võtame andmed
+            $res = $this->db->getArray($sql);
+        }
+    }
+
 }

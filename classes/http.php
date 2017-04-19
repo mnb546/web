@@ -50,5 +50,11 @@ class http
     function set($name, $val) {
         $this->vars[$name] = $val;
     }
+
+    function del($name) {
+        if(isset($this->vars[$name])) {
+            unset($this->vars[$name]);
+        }
+    }
 }
 ?>
