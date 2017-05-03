@@ -7,6 +7,10 @@
  */
 // sisse logimisobjekti loomine
 $login = new template('login');
+
+$error = $sess->get('error');
+$login->set('error', $error);
+
 // reaalsete väärtuste lisamine template elementidele
 $login->set('Kasutajanimi', 'Kasutaja');
 $login->set('Parool', 'Parool');
