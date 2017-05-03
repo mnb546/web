@@ -124,4 +124,23 @@ class session
         }
     }
 
+    // sessiooni andmete lisamine
+    function set ($name, $val){
+        $this->vars[$name] = $val;
+    }
+
+    // sessiooni andmete võtmine
+    function get($name){
+        if(isset($this->vars[$name])){
+            return $this->vars[$name];
+        }
+        return false;
+    }
+
+    function del($name){
+        if(isset($this->vars[$name])){
+            unset $this->vars[$name];
+        }
+    }
+
 }
