@@ -16,7 +16,7 @@ $main_tmp = new template('main');
 require_once('lang.php');
 //valmistame paarid malli_element => väärtus
 $main_tmp->set('header', 'minu lehe pealkiri');
-$main_tmp->set('user', 'Kasutajanimi');
+$main_tmp->set('user', $sess->user_data['username']);
 $main_tmp->set('title', 'Avaleht');
 
 $main_tmp->set('menu', 'Lehe peamenüü');
@@ -34,5 +34,7 @@ $main_tmp->set('site_title', 'Veebiprogrammeerimise kursus');
 print_r($main_tmp);
 echo '</pre>';*/
 echo $main_tmp->parse();
+// Uuendame sessiooni andmeid
+$sess->flush();
 
 ?>

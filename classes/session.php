@@ -23,9 +23,8 @@ class session
         $this->http = &$http;
         $this->db = &$db;
         // võtame sessiooni id andmed
-        $this->clearSessions();
-        $this->createSession();
         $this->sid = $http->get('sid');
+        $this->checkSession();
     }
 
     // sessiooni loomine
