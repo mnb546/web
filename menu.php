@@ -29,6 +29,9 @@ if ($res != false) {
     }
 }
 
+// sisse logimine
+
+
 // kui soovime pidevat asendamist, siis set funktsioon add asemel
 $main_tmp->add('menu', $menu->parse());
 ?>
