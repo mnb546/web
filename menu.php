@@ -30,7 +30,20 @@ if ($res != false) {
 }
 
 // sisse logimine
+if(USER_ID == ROLE_NONE) {
+    $item->set('name', tr('Logi sisse'));
+    $link = $http->getLink(array('act'=>'content_id'));
+    $item->set('link', $link);
+    $menu->add('items', $item->parse());
+}
 
+// välja logimine
+if(USER_ID == ROLE_NONE) {
+    $item->set('name', tr('Logi välja'));
+    $link = $http->getLink(array('act'=>'logout'));
+    $item->set('link', $link);
+    $menu->add('items', $item->parse());
+}
 
 // kui soovime pidevat asendamist, siis set funktsioon add asemel
 $main_tmp->add('menu', $menu->parse());
