@@ -21,7 +21,7 @@ print_r($res);
 // teeme päringu tulemuse kontrolli
 if($res == false){
     // siis tuleb suunata kasutaja sisselogimine tagasi
-    // echo 'Probleem sisse logimisega :/ ';
+    $sess->set('error', 'Probleem sisse logimisega :/ ');
     $link = $http->getLink(array('act' => 'login'));
     $http->redirect($link);
 }

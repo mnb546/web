@@ -125,7 +125,7 @@ class session
     }
 
     // sessiooni andmete lisamine
-    function set ($name, $val){
+    function set($name, $val){
         $this->vars[$name] = $val;
     }
 
@@ -139,7 +139,7 @@ class session
 
     function del($name){
         if(isset($this->vars[$name])){
-            unset $this->vars[$name];
+            unset($this->vars[$name]);
         }
     }
 
